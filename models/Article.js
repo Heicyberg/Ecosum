@@ -22,8 +22,21 @@ var ArticleSchema = new Schema({
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note"
+  },
+  saveStatus:{
+    type:Boolean,
+    default:false
   }
 });
+
+ArticleSchema.methods.saveAticle = function() {
+  // Make the "isCool" property of the current user equal to the boolean "true"
+  this.saveStatus= true;
+  // Return the new boolean value
+  return this.saveStatus;
+};
+
+
 
 // This creates our model from the above schema, using mongoose's model method
 var Article = mongoose.model("Article", ArticleSchema);

@@ -1,17 +1,17 @@
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var axios = require("axios");
+var request = require("request");
+var rp = require("request-promise");
 
 // Our scraping tools
 // Axios is a promised-based http library, similar to jQuery's Ajax method
 // It works on the client and on the server
-var request = require("request");
-var rp = require("request-promise");
 var cheerio = require("cheerio");
 
 // Require all models
-var db = require("./models");
-
+var db = require("./models")
 var PORT = 3000;
 
 // Initialize Express
@@ -27,20 +27,24 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/ecosum", { useNewUrlParser: true })
+        .catch(function(err){
+                 console.log(Error)
+               });
 
 // Routes
 
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.echojs.com/").then(function(response) {
+  axios.get("https://www.businessinsider.com/clusterstock").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
-
+      
     // Now, we grab every h2 within an article tag, and do the following:
-    $("article h2").each(function(i, element) {
+    $("h2").each(function(i, element) {
       // Save an empty result object
       var result = {};
 
@@ -69,10 +73,10 @@ app.get("/scrape", function(req, res) {
   });
 });
 
-// Route for getting all Articles from the db
+// Route for getting all saved Articles from the db
 app.get("/articles", function(req, res) {
   // Grab every document in the Articles collection
-  db.Article.find({})
+  db.Article.find({'saveStatus':false})
     .then(function(dbArticle) {
       // If we were able to successfully find Articles, send them back to the client
       res.json(dbArticle);
@@ -82,6 +86,31 @@ app.get("/articles", function(req, res) {
       res.json(err);
     });
 });
+
+
+// Route for getting all saved Articles from the db
+app.get("/savedArticles", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Article.find({'saveStatus':true})
+    .then(function(dbArticle) {
+      // If we were able to successfully find Articles, send them back to the client
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
+
+// Route for saving an Article
+app.post("/save/:id", function(req, res) {
+  // Create a new note and pass the req.body to the entry
+  db.Article.findOne({ _id: req.params.id}, function (err, doc){
+    doc.saveAticle();
+    doc.save();
+  });
+});
+
 
 // Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", function(req, res) {
