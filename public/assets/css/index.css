@@ -10,16 +10,33 @@ body { background-color: #F2F6D0
 }
 
 .articleModule {
-  margin-top: 10px;
-  padding: 10px;
+  padding: 15px;
   text-align: left;
-  background: #f3dfdf;
+  background: #d4d6c7;
+}
+
+.article-block{
+  background: #d4d6c7;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .navbar{
   min-height: 80px;
 }
 
+footer{
+  clear: both;
+  background: rgb(108, 178, 206);
+  padding: 20px;
+  font:#ffffff;
+  font-size: 17px;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 
 
 

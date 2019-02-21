@@ -73,7 +73,7 @@ app.get("/savedArticles", function(req, res) {
   });
 
 
-// Route for saving an Article
+// Route for saving an article
 app.post("/save/:id", function(req, res) {
     // Create a new note and pass the req.body to the entry
     db.Article.findOne({ _id: req.params.id}, function (err, doc){
@@ -82,7 +82,18 @@ app.post("/save/:id", function(req, res) {
     });
   });
 
-  // Route for grabbing a specific Article by id, populate it with it's note
+
+//Route for delete a saved article
+app.post("/delete/:id", function(req, res) {
+  // Create a new note and pass the req.body to the entry
+  db.Article.findOne({ _id: req.params.id}, function (err, doc){
+    doc.deleteAticle();
+    doc.save();
+  });
+});
+
+
+// Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", function(req, res) {
     // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
     db.Article.findOne({ _id: req.params.id })

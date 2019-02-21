@@ -37,6 +37,13 @@ ArticleSchema.methods.saveAticle = function() {
   return this.saveStatus;
 };
 
+ArticleSchema.methods.deleteAticle = function() {
+  // Make the "isCool" property of the current user equal to the boolean "true"
+  this.saveStatus= false;
+  // Return the new boolean value
+  return this.saveStatus;
+};
+
 
 // This creates our model from the above schema, using mongoose's model method
 var Article = mongoose.model("Article", ArticleSchema);

@@ -3,16 +3,15 @@ body { background-color: #F2F6D0;
     }
 
 .jumbotron {
-  background-image: url("../img/folder.jpg");
+  background-image: url("http://www.reveredtechnologies.com/wp-content/uploads/2013/03/compass-1000x-400.jpg");
   background-repeat: no-repeat;
-  background-size: fill;
+  background-size: cover;
+  min-height: 300px;
 }
-
 
 .navbar{
   min-height: 80px;
 }
-
 
 #notes {
   padding-top: 15px;
@@ -20,6 +19,10 @@ body { background-color: #F2F6D0;
 
 }
 
+#savenote {
+  margin-top:30px;
+  margin-left:10px;
+}
 
 
 textarea, input {
@@ -31,10 +34,15 @@ textarea, input {
 
 footer{
   clear: both;
-  background: rgb(25, 93, 119);
-  font:green;
+  background: rgb(108, 178, 206);
+  padding: 20px;
+  font:#ffffff;
   font-size: 17px;
   height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 
@@ -49,7 +57,7 @@ input {
 }
 
 button,.open{
-  width: 5%;
+  width: 20%;
 }
 
 .text-info{

@@ -23,7 +23,8 @@ $("#articles").on("click", "button", function(e) {
     url: "/save/" + thisId,
     data:null
   })
-
+   
+  window.location.href = "/"
 });
 
 
