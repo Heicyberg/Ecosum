@@ -42,9 +42,6 @@ const scrape = (req,res,next)=>{
 };
 
 
-
-
-
 module.exports = function(app){
 //get the data used to serve the home page
 

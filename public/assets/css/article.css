@@ -1,0 +1,60 @@
+body { background-color: #F2F6D0;
+       size:   100% ;
+    }
+
+.jumbotron {
+  background-image: url("../img/folder.jpg");
+  background-repeat: no-repeat;
+  background-size: fill;
+}
+
+
+.navbar{
+  min-height: 80px;
+}
+
+
+#notes {
+  padding-top: 15px;
+  background: rgb(231, 233, 141)
+
+}
+
+
+
+textarea, input {
+  display: block;
+  width: 100%;
+  background-color: rgba(197, 193, 165, 0.954);
+
+}
+
+footer{
+  clear: both;
+  background: rgb(25, 93, 119);
+  font:green;
+  font-size: 17px;
+  height: 50px;
+}
+
+
+input {
+  height: 36px;
+  font-size: 24px;
+}
+
+.textarea {
+  height: 200px;
+  font-size: 18px;
+}
+
+button,.open{
+  width: 5%;
+}
+
+.text-info{
+  width: 70%;
+}
+
+
+

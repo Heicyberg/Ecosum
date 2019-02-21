@@ -1,4 +1,6 @@
-body { background-color: #F2F6D0 }
+body { background-color: #F2F6D0
+    }
+    
 .jumbotron {
   background-image: url("../img/newspaper.jpg");
   background-size: cover;
@@ -6,20 +8,18 @@ body { background-color: #F2F6D0 }
   min-width: 600px;
   min-height: 400px;
 }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
+
+.articleModule {
+  margin-top: 10px;
+  padding: 10px;
+  text-align: left;
+  background: #f3dfdf;
+}
+
+.navbar{
+  min-height: 80px;
+}
+
+
+
+

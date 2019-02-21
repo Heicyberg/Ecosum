@@ -9,7 +9,8 @@ var ArticleSchema = new Schema({
   // `title` is required and of type String
   title: {
     type: String,
-    required: true
+    required: true,
+    unique:true
   },
   // `link` is required and of type String
   link: {
@@ -35,7 +36,6 @@ ArticleSchema.methods.saveAticle = function() {
   // Return the new boolean value
   return this.saveStatus;
 };
-
 
 
 // This creates our model from the above schema, using mongoose's model method

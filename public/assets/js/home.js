@@ -4,8 +4,8 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
     $("#articles").append("<div class ='row articleModule'>"+
-    "<a class='col-10'  href='" + data[i].link +"'>"+"<h4 class='text-info'>" + data[i].title+"</h4>"+ "</a>"
-    +"<button type='button' class='col-1 btn btn-primary' data-id='" + data[i]._id +" 'style='float: right;'>" +"Save"+ "</button>"
+    "<a class='col-11'  href='" + data[i].link +"'>"+"<h4 class='text-info'>" + data[i].title+"</h4>"+ "</a>"
+    +"<button type='button' class='col-1 btn btn-primary float-right' data-id='" + data[i]._id +" 'style='float: right;'>" +"Save"+ "</button>"
     +"</div>"+"<break>"
     );
   }

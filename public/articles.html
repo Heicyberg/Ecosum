@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>Ecosum</title>
     <!-- Default Style Sheet -->
-    <link type="text/css" rel="stylesheet" href="assets/css/index.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/article.css">
      <!-- Bootstrap CSS CDN -->
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
      crossorigin="anonymous">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary row">
           <a class="navbar-brand" href="http://nyt-mongo-scraper.herokuapp.com/">Ecosum</a>
           <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,18 +28,17 @@
               </ul>
             </div>
     </nav>
-    <div class="jumbotron text-center">
-            <div class="overlay">
-            </div>
-            <div class="background-image">
-            </div>
-            <div class="caption">
-              <h1>Saved Articles</h1>
-              <p>Your Saved Articles</p>
-            </div>
+    <div class="jumbotron">  
+        <div class="container">
+            <div class="col-5 image float-left"></div>
+        </div>
     </div>
-    <div id="wrapper">
-      <div id="articles"></div>
+    <div class="main-container p-2 ml-5 mr-5 row">
+        <div id="wrapper" class="col-9">
+          <div id="articles" class="row"></div>
+        </div>
+      <div id="notes" class="col-3 mt-0.5 ml-0.5">
+      </div> 
     </div>
     <footer class="footer">
         <div class="container text-center">
