@@ -1,4 +1,5 @@
-body { background-color: #F2F6D0
+body { background-color: #F2F6D0;
+      margin: 0;
     }
     
 .jumbotron {
@@ -29,14 +30,19 @@ footer{
   clear: both;
   background: rgb(108, 178, 206);
   padding: 20px;
-  font:#ffffff;
+  color:#ffffff;
   font-size: 17px;
   height: 50px;
-  position: fixed;
   left: 0;
-  bottom: 0;
   width: 100%;
+  margin-bottom: 0px;
 }
 
+.main-container{
+  min-height: 100%;
+}
 
+.push .footer{
+  height: 50px;
+}
 

@@ -31,20 +31,17 @@ textarea, input {
   background-color: rgba(197, 193, 165, 0.954);
 
 }
-
 footer{
   clear: both;
   background: rgb(108, 178, 206);
   padding: 20px;
-  font:#ffffff;
+  color:#ffffff;
   font-size: 17px;
   height: 50px;
-  position: fixed;
   left: 0;
-  bottom: 0;
   width: 100%;
+  margin-bottom: 0px;
 }
-
 
 input {
   height: 36px;

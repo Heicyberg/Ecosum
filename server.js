@@ -25,9 +25,6 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
                  console.log(Error)
                  console.log("Mongo DB error")
                });
-
-
-
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
